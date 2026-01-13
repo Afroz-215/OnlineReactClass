@@ -74,23 +74,37 @@
 // export default App;
 
 
-import React, { useState } from 'react'
-import Counter from './Counter'
-import Toggle from './Toggle'
-import Props from './Props'
+// import React, { useState } from 'react'
+// import Counter from './Counter'
+// import Toggle from './Toggle'
+// import Props from './Props'
+
+// const App = () => {
+
+//   const [count , setCount ] = useState(0)
+
+
+//   return (
+//     <div>
+//       {/* <button onClick={()=> setCount(count+1)}>click</button>
+//       <h1>Your Count is : {count}</h1> */}
+//       {/* <Counter/> */}
+//       {/* <Toggle/> */}
+//       <Props  name="Afroz" />
+//     </div>
+//   )
+// }
+
+// export default App
+
+
+import React from 'react'
+import Input from './Input.jsx'
 
 const App = () => {
-
-  const [count , setCount ] = useState(0)
-
-
   return (
     <div>
-      {/* <button onClick={()=> setCount(count+1)}>click</button>
-      <h1>Your Count is : {count}</h1> */}
-      {/* <Counter/> */}
-      {/* <Toggle/> */}
-      <Props  name="Afroz" />
+      <Input/>
     </div>
   )
 }
