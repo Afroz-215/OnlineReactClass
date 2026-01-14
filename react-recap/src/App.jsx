@@ -100,11 +100,13 @@
 
 import React from 'react'
 import Input from './Input.jsx'
+import UncontroledComponenet from './assets/UncontroledComponenet.jsx'
 
 const App = () => {
   return (
     <div>
-      <Input/>
+      {/* <Input/> */}
+      <UncontroledComponenet/>
     </div>
   )
 }
