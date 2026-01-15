@@ -101,12 +101,20 @@
 import React from 'react'
 import Input from './Input.jsx'
 import UncontroledComponenet from './assets/UncontroledComponenet.jsx'
+import Checkbox from './Checkbox.jsx'
+import RadioAndDropdown from './RadioAndDropdown.jsx'
+import Table from './Table.jsx'
+import Data from './Data.jsx'
 
 const App = () => {
   return (
     <div>
       {/* <Input/> */}
-      <UncontroledComponenet/>
+      {/* <UncontroledComponenet/> */}
+      {/* <Checkbox/> */}
+      {/* <RadioAndDropdown/> */}
+      {/* <Table /> */}
+      <Data/>
     </div>
   )
 }
