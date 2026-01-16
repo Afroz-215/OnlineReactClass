@@ -105,6 +105,7 @@ import Checkbox from './Checkbox.jsx'
 import RadioAndDropdown from './RadioAndDropdown.jsx'
 import Table from './Table.jsx'
 import Data from './Data.jsx'
+import Clock from './Clock.jsx'
 
 const App = () => {
   return (
@@ -114,7 +115,8 @@ const App = () => {
       {/* <Checkbox/> */}
       {/* <RadioAndDropdown/> */}
       {/* <Table /> */}
-      <Data/>
+      {/* <Data/> */}
+      <Clock/>
     </div>
   )
 }
