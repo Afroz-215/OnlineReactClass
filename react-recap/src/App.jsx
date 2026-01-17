@@ -98,25 +98,58 @@
 // export default App
 
 
+// import React from 'react'
+// import Input from './Input.jsx'
+// import UncontroledComponenet from './assets/UncontroledComponenet.jsx'
+// import Checkbox from './Checkbox.jsx'
+// import RadioAndDropdown from './RadioAndDropdown.jsx'
+// import Table from './Table.jsx'
+// import Data from './Data.jsx'
+// import Clock from './Clock.jsx'
+
+// const App = () => {
+//   return (
+//     <div>
+//       {/* <Input/> */}
+//       {/* <UncontroledComponenet/> */}
+//       {/* <Checkbox/> */}
+//       {/* <RadioAndDropdown/> */}
+//       {/* <Table /> */}
+//       {/* <Data/> */}
+//       <Clock/>
+//     </div>
+//   )
+// }
+
+// export default App
+
+// import React , {useEffect, useState}from 'react'
+
+// const App = () => {
+//    const [width, setWidth] = React.useState(window.innerWidth);
+
+//   window.addEventListener("resize", () => {
+//     setWidth(window.innerWidth+1);
+//     console.log("first")
+//   });
+
+
+//   return (
+//     <div>
+//      <h1>Width: {width}</h1>
+//     </div>
+//   )
+// }
+
+//  export default App
+
 import React from 'react'
-import Input from './Input.jsx'
-import UncontroledComponenet from './assets/UncontroledComponenet.jsx'
-import Checkbox from './Checkbox.jsx'
-import RadioAndDropdown from './RadioAndDropdown.jsx'
-import Table from './Table.jsx'
-import Data from './Data.jsx'
-import Clock from './Clock.jsx'
+import Hook from './Hook'
 
 const App = () => {
   return (
     <div>
-      {/* <Input/> */}
-      {/* <UncontroledComponenet/> */}
-      {/* <Checkbox/> */}
-      {/* <RadioAndDropdown/> */}
-      {/* <Table /> */}
-      {/* <Data/> */}
-      <Clock/>
+      <Hook/>
     </div>
   )
 }
