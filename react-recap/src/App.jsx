@@ -146,12 +146,14 @@
 import React from 'react'
 import Hook from './Hook'
 import LifeCycle from './LifeCycle'
+import Ref from './Ref'
 
 const App = () => {
   return (
     <div>
       {/* <Hook/> */}
-      <LifeCycle/>
+      {/* <LifeCycle/> */}
+      <Ref/>
     </div>
   )
 }
