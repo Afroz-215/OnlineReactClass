@@ -144,16 +144,20 @@
 //  export default App
 
 import React from 'react'
-import Hook from './Hook'
-import LifeCycle from './LifeCycle'
-import Ref from './Ref'
+// import Hook from './Hook'
+// import LifeCycle from './LifeCycle'
+// import Ref from './Ref'
+import FormStatus from './FormStatus'
+import Transition from './Transition'
 
 const App = () => {
   return (
     <div>
       {/* <Hook/> */}
       {/* <LifeCycle/> */}
-      <Ref/>
+      {/* <Ref/> */}
+      {/* <FormStatus/> */}
+      <Transition/>
     </div>
   )
 }

@@ -14,12 +14,12 @@ import React, {forwardRef,useRef} from 'react'
 
 // After version 19 alwayse use prop
 
-const ForRef = (props) => {
+const ForRef = forwardRef((props) => {
   return (
     <div>
          <input ref={props.ref} type="text" name="" id="" />
     </div>
   )
-}
+})
 
 export default ForRef
