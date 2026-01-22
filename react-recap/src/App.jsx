@@ -149,6 +149,8 @@ import React from 'react'
 // import Ref from './Ref'
 import FormStatus from './FormStatus'
 import Transition from './Transition'
+import Derived from './Derived'
+import LiftingState from './LiftingState'
 
 const App = () => {
   return (
@@ -157,7 +159,9 @@ const App = () => {
       {/* <LifeCycle/> */}
       {/* <Ref/> */}
       {/* <FormStatus/> */}
-      <Transition/>
+      {/* <Transition/> */}
+      {/* <Derived/> */}
+      <LiftingState/>
     </div>
   )
 }
