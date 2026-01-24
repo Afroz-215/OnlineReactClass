@@ -169,66 +169,54 @@
 // export default App
 
 
-import { useState } from "react";
+// import React, { useState } from "react";
 
-// Conversion helpers
-function toFahrenheit(celsius) {
-  return (celsius * 9) / 5 + 32;
-}
-function toCelsius(fahrenheit) {
-  return ((fahrenheit - 32) * 5) / 9;
-}
-
-function TemperatureInput({ value, onChange, label }) {
-  return (
-    <div>
-      <label>{label}: </label>
-      <input
-        type="number"
-        value={value}
-        onChange={(e) => onChange(e.target.value)}
-      />
-    </div>
-  );
-}
-
-export default function App() {
-  const [temperature, setTemperature] = useState("");
-  const [scale, setScale] = useState("c");
-
-  const celsius =
-    scale === "f" ? toCelsius(parseFloat(temperature) || 0) : temperature;
-  const fahrenheit =
-    scale === "c" ? toFahrenheit(parseFloat(temperature) || 0) : temperature;
-
-  return (
-    <>
-      <TemperatureInput
-        label="Celsius"
-        value={celsius}
-        onChange={(val) => {
-          setScale("c");
-          setTemperature(val);
-        }}
-      />
-      <TemperatureInput
-        label="Fahrenheit"
-        value={fahrenheit}
-        onChange={(val) => {
-          setScale("f");
-          setTemperature(val);
-        }}
-      />
-    </>
-  );
-}
- 
-// import React from 'react'
+// const InputBox = ({ value, onChange, label }) => {
+//   return (
+//     <div>
+//       <label>{label}</label>
+//       <input
+//         value={value}
+//         onChange={(e) => onChange(e.target.value)}
+//       />
+//     </div>
+//   );
+// };
 
 // const App = () => {
-//   return (
-//     <div>App</div>
-//   )
-// }
+//   const [num, setNum] = useState("");
 
-// export default App
+//   return (
+//     <>
+//       <InputBox
+//         label="Normal"
+//         value={num}
+//         onChange={setNum}
+//       />
+
+//       <InputBox
+//         label="Double"
+//         value={num ? num * 2 : ""}
+//         onChange={(val) => setNum(val / 2)}
+//       />
+//     </>
+//   );
+// };
+
+// export default App;
+
+
+import React from 'react'
+import UpdateObjectInState from './UpdateObjectInState'
+import UpdateArray from './UpdateArray'
+
+const App = () => {
+  return (
+    <div>
+      {/* <UpdateObjectInState/> */}
+      <UpdateArray/>
+    </div>
+  )
+}
+
+export default App
