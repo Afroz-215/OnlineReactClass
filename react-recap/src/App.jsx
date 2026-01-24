@@ -143,27 +143,92 @@
 
 //  export default App
 
-import React from 'react'
-// import Hook from './Hook'
-// import LifeCycle from './LifeCycle'
-// import Ref from './Ref'
-import FormStatus from './FormStatus'
-import Transition from './Transition'
-import Derived from './Derived'
-import LiftingState from './LiftingState'
+// import React from 'react'
+// // import Hook from './Hook'
+// // import LifeCycle from './LifeCycle'
+// // import Ref from './Ref'
+// import FormStatus from './FormStatus'
+// import Transition from './Transition'
+// import Derived from './Derived'
+// import LiftingState from './LiftingState'
 
-const App = () => {
-  return (
-    <div>
-      {/* <Hook/> */}
-      {/* <LifeCycle/> */}
-      {/* <Ref/> */}
-      {/* <FormStatus/> */}
-      {/* <Transition/> */}
-      {/* <Derived/> */}
-      <LiftingState/>
-    </div>
-  )
+// const App = () => {
+//   return (
+//     <div>
+//       {/* <Hook/> */}
+//       {/* <LifeCycle/> */}
+//       {/* <Ref/> */}
+//       {/* <FormStatus/> */}
+//       {/* <Transition/> */}
+//       {/* <Derived/> */}
+//       <LiftingState/>
+//     </div>
+//   )
+// }
+
+// export default App
+
+
+import { useState } from "react";
+
+// Conversion helpers
+function toFahrenheit(celsius) {
+  return (celsius * 9) / 5 + 32;
+}
+function toCelsius(fahrenheit) {
+  return ((fahrenheit - 32) * 5) / 9;
 }
 
-export default App
+function TemperatureInput({ value, onChange, label }) {
+  return (
+    <div>
+      <label>{label}: </label>
+      <input
+        type="number"
+        value={value}
+        onChange={(e) => onChange(e.target.value)}
+      />
+    </div>
+  );
+}
+
+export default function App() {
+  const [temperature, setTemperature] = useState("");
+  const [scale, setScale] = useState("c");
+
+  const celsius =
+    scale === "f" ? toCelsius(parseFloat(temperature) || 0) : temperature;
+  const fahrenheit =
+    scale === "c" ? toFahrenheit(parseFloat(temperature) || 0) : temperature;
+
+  return (
+    <>
+      <TemperatureInput
+        label="Celsius"
+        value={celsius}
+        onChange={(val) => {
+          setScale("c");
+          setTemperature(val);
+        }}
+      />
+      <TemperatureInput
+        label="Fahrenheit"
+        value={fahrenheit}
+        onChange={(val) => {
+          setScale("f");
+          setTemperature(val);
+        }}
+      />
+    </>
+  );
+}
+ 
+// import React from 'react'
+
+// const App = () => {
+//   return (
+//     <div>App</div>
+//   )
+// }
+
+// export default App
