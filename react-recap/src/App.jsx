@@ -209,12 +209,17 @@
 import React from 'react'
 import UpdateObjectInState from './UpdateObjectInState'
 import UpdateArray from './UpdateArray'
+import Action from './Action'
+import UseId from './UseId'
 
 const App = () => {
   return (
     <div>
       {/* <UpdateObjectInState/> */}
-      <UpdateArray/>
+      {/* <UpdateArray/> */}
+      {/* <Action/> */}
+      <UseId/>
+
     </div>
   )
 }
