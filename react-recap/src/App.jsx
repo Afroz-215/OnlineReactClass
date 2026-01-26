@@ -206,21 +206,51 @@
 // export default App;
 
 
+// import React from 'react'
+// import UpdateObjectInState from './UpdateObjectInState'
+// import UpdateArray from './UpdateArray'
+// import Action from './Action'
+// import UseId from './UseId'
+// import Reducer from './Reducer'
+// import UseCustom from './useCustom'
+
+// const App = () => {
+//   return (
+//     <div>
+//       {/* <UpdateObjectInState/> */}
+//       {/* <UpdateArray/> */}
+//       {/* <Action/> */}
+//       {/* <UseId/> */}
+//       {/* <Reducer/> */}
+//       {/* <UseCustom/> */}
+
+//     </div>
+//   )
+// }
+
+// export default App
+
+
+
 import React from 'react'
-import UpdateObjectInState from './UpdateObjectInState'
-import UpdateArray from './UpdateArray'
-import Action from './Action'
-import UseId from './UseId'
+import CollegeComponent from './CollegeComponent'
+import { SubjectContext } from './ContextData'
 
 const App = () => {
   return (
-    <div>
-      {/* <UpdateObjectInState/> */}
-      {/* <UpdateArray/> */}
-      {/* <Action/> */}
-      <UseId/>
-
-    </div>
+  <div style={{backgroundColor:'yellow',padding:10}}>
+  <SubjectContext.Provider value='English'>
+    <select >
+      <option value="Math"></option>
+      <option value=""></option>
+      <option value=""></option>
+      <option value=""></option>
+    </select>
+    <h1>Context API</h1>
+  <CollegeComponent/>
+  </SubjectContext.Provider>
+  
+  </div>
   )
 }
 
