@@ -5,11 +5,11 @@
 // // import './index.css'
 
 // function App() {
-  
+
 //   // function callFun(){
 //   //   alert("function alert")
 //   // }
- 
+
 //   const callFun =(() => {
 //     alert("heeloooo")
 //   })
@@ -26,12 +26,12 @@
 //  <button onClick={callFun}>Click Me </button>
 //   </>
 //  )
- 
- 
+
+
 // }
 
 //  export default App
-          
+
 
 // Language: JavaScript (React)
 
@@ -232,25 +232,65 @@
 
 
 
+// import React, { useState } from 'react'
+// import CollegeComponent from './CollegeComponent'
+// import { SubjectContext } from './ContextData'
+
+// const App = () => {
+//   const [subject,setSubject]=useState('English')
+//   return (
+//     <div style={{ backgroundColor: 'yellow', padding: 10 }}>
+//       <SubjectContext.Provider value={subject}>
+//         <select onChange={(e)=>setSubject(e.target.value)}>
+//           <option value="">Select Subject</option>
+//           <option value="History">History</option>
+//           <option value="Geography">Geography</option>
+//           <option value="Economic">Economics</option>
+//         </select>
+//         <button onClick={()=>setSubject('')}>CLear context</button>
+//         <h1>Context API</h1>
+
+//         <CollegeComponent />
+//       </SubjectContext.Provider>
+
+//     </div>
+//   )
+// }
+
+// export default App
+
+
+
 import React from 'react'
-import CollegeComponent from './CollegeComponent'
-import { SubjectContext } from './ContextData'
+import { Routes, Route } from 'react-router'
+import Navbar from './Navbar'
+import HomePage from './HomePage'
+import LOginPage from './LOginPage'
+import AboutPage from './AboutPage'
+import PageNotFound from './PageNotFound'
+import College from './College'
+import Student from './Student'
+import Department from './Department'
+import Detail from './Detail'
 
 const App = () => {
   return (
-  <div style={{backgroundColor:'yellow',padding:10}}>
-  <SubjectContext.Provider value='English'>
-    <select >
-      <option value="Math"></option>
-      <option value=""></option>
-      <option value=""></option>
-      <option value=""></option>
-    </select>
-    <h1>Context API</h1>
-  <CollegeComponent/>
-  </SubjectContext.Provider>
-  
-  </div>
+    <div>
+      <Navbar />
+      <Routes>
+        <Route path='/' element={<HomePage />} />
+        <Route path='/login' element={<LOginPage />} />
+        <Route path='/about' element={<AboutPage />} />
+        <Route path='/college' element={<College />}>
+          <Route path='student' element={<Student />} />
+          <Route path='department' element={<Department />} />
+          <Route path='detail' element={<Detail />} />
+
+        </Route>
+        <Route path='/*' element={<PageNotFound />} />
+      </Routes>
+
+    </div>
   )
 }
 
