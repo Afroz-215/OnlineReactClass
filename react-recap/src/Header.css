@@ -56,3 +56,7 @@ body {
     margin: 10px;
     color:violet;
 }
+
+.active {
+    font-weight:bolder ;
+}
