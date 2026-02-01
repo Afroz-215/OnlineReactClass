@@ -261,63 +261,78 @@
 
 
 
+// import React from 'react'
+// import { Routes, Route } from 'react-router'
+// import Navbar from './Navbar'
+// import HomePage from './HomePage'
+// import LOginPage from './LOginPage'
+// import AboutPage from './AboutPage'
+// import PageNotFound from './PageNotFound'
+// import College from './College'
+// import Student from './Student'
+// import Department from './Department'
+// import Detail from './Detail'
+// import UserPage from './UserPage'
+// import UserList from './UserList'
+
+// const App = () => {
+//   return (
+//     <div>
+
+//       <Routes>
+//         <Route  element={<Navbar />}>
+//           <Route path='/' element={<HomePage />} />
+//           <Route path='/login' element={<LOginPage />} />
+//           <Route path='/about' element={<AboutPage />} />
+//           <Route path='/users' element={<UserPage/>} />
+//           <Route path='users/:id' element={<UserList/>}/>
+//         </Route>
+
+//         <Route path='/college' element={<College />}>
+//           <Route index element={<Student />} />
+//           <Route path='department' element={<Department />} />
+//           <Route path='detail' element={<Detail />} />
+
+//         </Route>
+//         <Route path='/*' element={<PageNotFound />} />
+//       </Routes>
+
+//     </div>
+//   )
+// }
+
+// export default App
+
+
+
+
+// // import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+// // import UserPage from "./UserPage";
+
+// // function App() {
+// //   return (
+// //       <Routes>
+// //         <Route path="/user" element={<UserPage />} />
+// //         {/* Dynamic route with :id */}
+// //         <Route path="/user/:id" element={<UserPage />} />
+// //       </Routes>
+  
+// //   );
+// // }
+
+// // export default App;
+
+
+
 import React from 'react'
-import { Routes, Route } from 'react-router'
-import Navbar from './Navbar'
-import HomePage from './HomePage'
-import LOginPage from './LOginPage'
-import AboutPage from './AboutPage'
-import PageNotFound from './PageNotFound'
-import College from './College'
-import Student from './Student'
-import Department from './Department'
-import Detail from './Detail'
-import UserPage from './UserPage'
-import UserList from './UserList'
+import Get from './API/Get'
 
 const App = () => {
   return (
     <div>
-
-      <Routes>
-        <Route  element={<Navbar />}>
-          <Route path='/' element={<HomePage />} />
-          <Route path='/login' element={<LOginPage />} />
-          <Route path='/about' element={<AboutPage />} />
-          <Route path='/users' element={<UserPage/>} />
-          <Route path='users/:id' element={<UserList/>}/>
-        </Route>
-
-        <Route path='/college' element={<College />}>
-          <Route index element={<Student />} />
-          <Route path='department' element={<Department />} />
-          <Route path='detail' element={<Detail />} />
-
-        </Route>
-        <Route path='/*' element={<PageNotFound />} />
-      </Routes>
-
+      <Get/>
     </div>
   )
 }
 
 export default App
-
-
-
-
-// import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-// import UserPage from "./UserPage";
-
-// function App() {
-//   return (
-//       <Routes>
-//         <Route path="/user" element={<UserPage />} />
-//         {/* Dynamic route with :id */}
-//         <Route path="/user/:id" element={<UserPage />} />
-//       </Routes>
-  
-//   );
-// }
-
-// export default App;
