@@ -1,0 +1,23 @@
+.ul {
+    list-style: none;
+    border: 1px solid black;
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    padding: 10px;
+    margin: 0;
+    font-size: large;
+
+}
+
+.ul-header {
+    list-style: none;
+    border: 1px solid black;
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    padding: 10px;
+    margin: 0;
+    font-size: large;
+    font-weight: 900;
+}

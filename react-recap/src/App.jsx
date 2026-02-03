@@ -324,13 +324,24 @@
 
 
 
-import React from 'react'
+import React  from 'react'
+import {Routes,Route, NavLink} from 'react-router-dom'
 import Get from './API/Get'
+import List from './API/List'
 
 const App = () => {
   return (
     <div>
-      <Get/>
+      <ul>
+        <li>
+        <NavLink to >Data</NavLink> </li>
+        <li><NavLink>List</NavLink>
+        </li>
+      </ul>
+      <Routes>
+        <Route path='/' element={<Get/>} />
+        <Route path='/add' element={<List/>} />
+      </Routes>
     </div>
   )
 }
