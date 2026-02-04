@@ -334,8 +334,8 @@ const App = () => {
     <div>
       <ul>
         <li>
-        <NavLink to >Data</NavLink> </li>
-        <li><NavLink>List</NavLink>
+        <NavLink to='/' >Data</NavLink> </li>
+        <li><NavLink to='/add'>List</NavLink>
         </li>
       </ul>
       <Routes>
