@@ -326,8 +326,10 @@
 
 import React  from 'react'
 import {Routes,Route, NavLink} from 'react-router-dom'
-import Get from './API/Get'
+import GetAndDelete from './API/GetAndDelete'
 import List from './API/List'
+import Post from './API/Post'
+import Edit from './API/Edit'
 
 const App = () => {
   return (
@@ -335,12 +337,13 @@ const App = () => {
       <ul>
         <li>
         <NavLink to='/' >Data</NavLink> </li>
-        <li><NavLink to='/add'>List</NavLink>
+        <li><NavLink to='/add'>AddUser</NavLink>
         </li>
       </ul>
       <Routes>
-        <Route path='/' element={<Get/>} />
-        <Route path='/add' element={<List/>} />
+        <Route path='/' element={<GetAndDelete/>} />
+        <Route path='/add' element={<Post/>} />
+        <Route path='/edit/:id' element={<Edit/>} />
       </Routes>
     </div>
   )
