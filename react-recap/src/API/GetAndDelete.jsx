@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import './Style.css'
-import { Link } from 'react-router';
+import { Link, useNavigate } from 'react-router';
 
 const GetAndDelete = () => {
   const [data,setData] = useState([])
+  const navigate =useNavigate()
   const url ='http://localhost:3000/users';
   
   useEffect(()=>{
@@ -23,6 +24,10 @@ const GetAndDelete = () => {
      showData()
   }
 
+  function navigation(id){
+      navigate('/edit/'+id)
+  }
+
   return (
     <div>
       <ul className='ul-header'>
@@ -39,7 +44,7 @@ const GetAndDelete = () => {
             <li>{a.age}</li>
             <li>{a.email}</li>
             <li><button onClick={()=>deleteData(a.id)}>delete</button>
-            <button><Link style={{textDecoration:'none',color:'black'}} to='edit/:id'>Edit</Link></button></li>
+            <button onClick={()=>navigation(a.id)}>edit</button></li>
           </ul>
         })
       }
