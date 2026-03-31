@@ -324,27 +324,76 @@
 
 
 
-import React  from 'react'
-import {Routes,Route, NavLink} from 'react-router-dom'
-import GetAndDelete from './API/GetAndDelete'
-import List from './API/List'
-import Post from './API/Post'
-import Edit from './API/Edit'
+// import React  from 'react'
+// import {Routes,Route, NavLink} from 'react-router-dom'
+// import GetAndDelete from './API/GetAndDelete'
+// import List from './API/List'
+// import Post from './API/Post'
+// import Edit from './API/Edit'
+
+// const App = () => {
+//   return (
+//     <div>
+//       <ul>
+//         <li>
+//         <NavLink to='/' >Data</NavLink> </li>
+//         <li><NavLink to='/add'>AddUser</NavLink>
+//         </li>
+//       </ul>
+//       <Routes>
+//         <Route path='/' element={<GetAndDelete/>} />
+//         <Route path='/add' element={<Post/>} />
+//         <Route path='/edit/:id' element={<Edit/>} />
+//       </Routes>
+//     </div>
+//   )
+// }
+
+// export default App
+
+// import React from 'react'
+// import ControlledComponent from './ControlledComponent'
+// import UncontroledComponenet from './UncontroledComponenet'
+// import Action from './Action'
+// import UseId from './UseId'
+// import UseCustom from './UseCustom'
+
+// const App = () => {
+//   return (
+//     <div>
+//       {/* <ControlledComponent/> */}
+//       {/* <UncontroledComponenet/> */}
+//       {/* <Action/> */}
+//       {/* <UseId/> */}
+//       <UseCustom/>
+//     </div>
+//   )
+// }
+
+// export default App
+
+
+import React, { useState } from 'react'
+import CollegeComponent from './CollegeComponent'
+import { SubjectContext } from './ContextData'
 
 const App = () => {
+  const [subject,setSubject]=useState('English')
   return (
-    <div>
-      <ul>
-        <li>
-        <NavLink to='/' >Data</NavLink> </li>
-        <li><NavLink to='/add'>AddUser</NavLink>
-        </li>
-      </ul>
-      <Routes>
-        <Route path='/' element={<GetAndDelete/>} />
-        <Route path='/add' element={<Post/>} />
-        <Route path='/edit/:id' element={<Edit/>} />
-      </Routes>
+    <div style={{ backgroundColor: 'yellow', padding: 10 }}>
+      <SubjectContext.Provider value={subject}>
+        <select onChange={(e)=>setSubject(e.target.value)}>
+          <option value="">Select Subject</option>
+          <option value="History">History</option>
+          <option value="Geography">Geography</option>
+          <option value="Economic">Economics</option>
+        </select>
+        <button onClick={()=>setSubject('')}>CLear context</button>
+        <h1>Context API</h1>
+
+        <CollegeComponent />
+      </SubjectContext.Provider>
+
     </div>
   )
 }

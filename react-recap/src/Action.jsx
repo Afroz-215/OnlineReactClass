@@ -1,7 +1,7 @@
 import React, { useActionState } from 'react'
 
 const Action = () => {
-  const handleForm =async (prevDate,formData)=>{
+  const handleForm =async (prevData,formData)=>{
    let name =formData.get('name')
    let pass =formData.get('password')
 
