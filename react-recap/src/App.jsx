@@ -373,29 +373,149 @@
 // export default App
 
 
-import React, { useState } from 'react'
-import CollegeComponent from './CollegeComponent'
-import { SubjectContext } from './ContextData'
+// import React, { useState } from 'react'
+// import CollegeComponent from './CollegeComponent'
+// import { SubjectContext } from './ContextData'
 
-const App = () => {
-  const [subject,setSubject]=useState('English')
+// const App = () => {
+//   const [subject,setSubject]=useState('English')
+//   return (
+//     <div style={{ backgroundColor: 'yellow', padding: 10 }}>
+//       <SubjectContext.Provider value={subject}>
+//         <select onChange={(e)=>setSubject(e.target.value)}>
+//           <option value="">Select Subject</option>
+//           <option value="History">History</option>
+//           <option value="Geography">Geography</option>
+//           <option value="Economic">Economics</option>
+//         </select>
+//         <button onClick={()=>setSubject('')}>CLear context</button>
+//         <h1>Context API</h1>
+
+//         <CollegeComponent />
+//       </SubjectContext.Provider>
+
+//     </div>
+//   )
+// }
+
+// export default App
+
+
+// import { useState } from "react";
+
+// function Card({ id, deleteCard }) {
+//   return (
+//     <div>
+//       <h2>Card {id}</h2>
+//       <p>This is a simple card</p>
+
+//       <button onClick={() => deleteCard(id)}>
+//         Delete
+//       </button>
+//     </div>
+//   );
+// }
+
+// function App() {
+//   const [cards, setCards] = useState([]);
+
+//   function addCard() {
+//     let newCard = {
+//       id: Date.now()
+//     };
+
+//     setCards([...cards, newCard]);
+//   }
+
+//   function deleteCard(id) {
+//     let newCards = cards.filter((card) => card.id !== id);
+
+//     setCards(newCards);
+//   }
+
+//   return (
+//     <div>
+//       <button onClick={addCard}>Add Card</button>
+
+//       {cards.map((card) => (
+//         <Card
+//           key={card.id}
+//           id={card.id}
+//           deleteCard={deleteCard}
+//         />
+//       ))}
+//     </div>
+//   );
+// }
+
+// export default App;
+
+// import React  from 'react'
+// import {Routes,Route, NavLink} from 'react-router-dom'
+// import GetAndDelete from './API/GetAndDelete'
+// import List from './API/List'
+// import Post from './API/Post'
+// import Edit from './API/Edit'
+
+// const App = () => {
+//   return (
+//     <div>
+//       <ul>
+//         <li>
+//         <NavLink to='/' >Data</NavLink> </li>
+//         <li><NavLink to='/add'>AddUser</NavLink>
+//         </li>
+//       </ul>
+//       <Routes>
+//         <Route path='/' element={<GetAndDelete/>} />
+//         <Route path='/add' element={<Post/>} />
+//         <Route path='/edit/:id' element={<Edit/>} />
+//       </Routes>
+//     </div>
+//   )
+// }
+
+
+// export default App
+
+
+
+
+import { useState } from "react";
+
+function Card({ onDelete }) {
   return (
-    <div style={{ backgroundColor: 'yellow', padding: 10 }}>
-      <SubjectContext.Provider value={subject}>
-        <select onChange={(e)=>setSubject(e.target.value)}>
-          <option value="">Select Subject</option>
-          <option value="History">History</option>
-          <option value="Geography">Geography</option>
-          <option value="Economic">Economics</option>
-        </select>
-        <button onClick={()=>setSubject('')}>CLear context</button>
-        <h1>Context API</h1>
-
-        <CollegeComponent />
-      </SubjectContext.Provider>
-
+    <div>
+      <h2>My Card</h2>
+      <p>Hello</p>
+      <button onClick={onDelete}>Delete</button>
     </div>
-  )
+  );
 }
 
-export default App
+function App() {
+  const [cards, setCards] = useState([]);
+
+  function addCard() {
+    setCards([...cards, {}]);
+  }
+
+  function deleteCard(index) {
+    setCards(cards.filter((_, i) => i !== index));
+  }
+
+  return (
+    <div>
+      <button onClick={addCard}>Add Card</button>
+
+      {cards.map((_, index) => (
+        <Card
+          key={index}
+          onDelete={() => deleteCard(index)}
+        />
+      ))}
+    </div>
+  );
+}
+
+export default App;
